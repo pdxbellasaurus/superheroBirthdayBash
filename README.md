@@ -1,19 +1,20 @@
-##Superhero Horoscope Birthday Bash!
+## Superhero Horoscope Birthday Bash!
 
-#Project Descsription
+# Project Descsription
 
 
-#User Story
+# User Story
 As a superhero fan I want to enter a birth date and get the current horoscope. 
 
-#Wireframe
+# Wireframe
 !()
 
-APIs Used
+# APIs Used
 https://aztro.readthedocs.io/en/latest/
 https://comicvine.gamespot.com/api/documentation
 
-CSS Framework:
+# CSS Framework
 Bulma
 
-Roughbreakdown of tasks
+# Roughbreakdown of tasks
+Javascript - Lead: 
