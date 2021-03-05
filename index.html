@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
 
+    <!--A block for our title-->
+<div class="title">
+    <h1>Superhero Birthday Bash</h1>
+    <h3>A Daily Horoscope Application for all superhero fans</h3>
+</div>
+
+
+<!-- Side Form for User's to enter their D.O.B.  -->
+    <div class="userInput">
+            <form>
+                <h3>Instructions</h3>
+                <p>Please enter your Birthday to find out which Superhero is your "solar twin" and also your daily Horoscope!</p>
+                <input class="userDate"> 
+            </form>
+            <button type="submit" form="date" value="Submit">Submit</button>
+        
+        <!--previous searches will be held here-->
+            <div class="pastHeros">
+                <ul>
+                    <li> <span>Past Hero 1</span></li>
+                    <li><span>Past Hero 2</span></li>
+                    <li> <span>Past Hero 3</span></li>
+                    <li> <span>Past Hero 4</span></li>
+                </ul>
+        </div>
+    </div>
+
+    <!--SuperHero Bio section with Img-->
+    <div class="heroBio">
+        <img class="heroImg" >
+        <div class="heroText"><span>Here is where information about the hero will go</span></div>
+    </div>
+
+<!--Horoscope Section-->
+    <div class="horoscope">
+        <img src="link to api's horrorscope image link">   
+        <h3>Your Daily Horoscope for <span></span> is...</h3>
+        <p><span>Here is where the horoscope text will go</span></p>
+    </div>
+
+<!--Credits Section-->
+<footer>
+    <h6>Created by Carrie, Brigid, and Harrison University of Oregon Full Stack Web Development 2021</h6>
+</footer>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="demo_script_src.js"></script>
+</body>
+</html>
