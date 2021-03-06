@@ -3,7 +3,8 @@ var yearEl = document.querySelector(".heroYear");
 var horoEl = document.querySelector(".horo")
 var figYearEl;
 var submitBtn = document.querySelector("button");
-var pastSearches = document.querySelector(".pastHeroes")
+var pastSearches = document.querySelector("#pastSearches")
+var searches = [];
 
 
 
@@ -116,11 +117,20 @@ submitBtn.addEventListener("click", function(event){
     fetch(url)
     .then(response => response.json())
     .then(json => {
-        // console.log(json);
+        console.log(json);
         const {births} = json;
         var randBirth = births[Math.floor(Math.random()*births.length)];
-        heroEl.textContent = randBirth.description + " is a " + sign;
+        heroEl.innerHTML = "<a href='" + randBirth.wikipedia[0].wikipedia + "'>" + randBirth.description + "</a>" + " is a " + sign;
         yearEl.textContent = "...and was born in the year " + randBirth.year;
-        localStorage.setItem("figure", randBirth.description);
+        var date = month + "/" + day;
+        searches.push(date);
+        localStorage.setItem("searches", JSON.stringify(searches));
+        pastSearches.innerHTML = "";
+        for (i=0; i < searches.length; i++) {
+            var li = document.createElement("li");
+            li.textContent = searches[i] + ":" + randBirth.wikipedia[0].title;
+            pastSearches.append(li);
+        }
+
     });
 });
