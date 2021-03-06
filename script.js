@@ -3,6 +3,7 @@ var yearEl = document.querySelector(".heroYear");
 var horoEl = document.querySelector(".horo")
 var figYearEl;
 var submitBtn = document.querySelector("button");
+var pastSearches = document.querySelector(".pastHeroes")
 
 
 
@@ -11,76 +12,76 @@ var sunSign = function(month, day) {
     if (month == "12"){ 
             
         if (day < 22) 
-        sign = "Sagittarius"; 
+        sign = "sagittarius"; 
         else
-        sign ="Capricorn"; 
+        sign ="capricorn "; 
     } 
         
     else if (month == "1"){ 
         if (day < 20) 
-        sign = "Capricorn"; 
+        sign = "capricorn"; 
         else
-        sign = "Aquarius"; 
+        sign = "aquarius"; 
     } 
         
     else if (month == "2"){ 
         if (day < 19) 
-        sign = "Aquarius"; 
+        sign = "aquarius"; 
         else
-        sign = "Pisces"; 
+        sign = "pisces"; 
     } 
         
     else if(month == "3"){ 
         if (day < 21)  
-        sign = "Pisces"; 
+        sign = "pisces"; 
         else
-        sign = "Aries"; 
+        sign = "aries"; 
     } 
     else if (month == "4"){ 
         if (day < 20) 
-        sign = "Aries"; 
+        sign = "aries"; 
         else
-        sign = "Taurus"; 
+        sign = "taurus"; 
     } 
         
     else if (month == "5"){ 
         if (day < 21) 
-        sign = "Taurus"; 
+        sign = "taurus"; 
         else
-        sign = "Gemini"; 
+        sign = "gemini"; 
     } 
         
     else if( month == "6"){ 
         if (day < 21) 
-        sign = "Gemini"; 
+        sign = "gemini"; 
         else
-        sign = "Cancer"; 
+        sign = "cancer"; 
     } 
         
     else if (month == "7"){ 
         if (day < 23) 
-        sign = "Cancer"; 
+        sign = "cancer"; 
         else
-        sign = "Leo"; 
+        sign = "leo"; 
     } 
         
     else if( month == "8"){ 
         if (day < 23)  
-        sign = "Leo"; 
+        sign = "leo"; 
         else
-        sign = "Virgo"; 
+        sign = "virgo"; 
     } 
         
     else if (month == "9"){ 
         if (day < 23) 
-        sign = "Virgo"; 
+        sign = "virgo"; 
         else
-        sign = "Libra"; 
+        sign = "libra"; 
     } 
         
     else if (month == "10"){ 
         if (day < 23) 
-        sign = "Libra"; 
+        sign = "libra"; 
         else
         sign = "scorpio"; 
     } 
@@ -89,7 +90,7 @@ var sunSign = function(month, day) {
         if (day < 22) 
         sign = "scorpio"; 
         else
-        sign = "Sagittarius"; 
+        sign = "sagittarius"; 
     }
     return sign;
 };
