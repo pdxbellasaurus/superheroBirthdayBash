@@ -1,12 +1,14 @@
-var heroEl = document.querySelector(".heroText");
-var yearEl = document.querySelector(".heroYear");
-var horoEl = document.querySelector(".horo")
+var charEl = document.querySelector("#character");
+// var yearEl = document.querySelector("#birthyear");
+var horoEl = document.querySelector("#horo")
 var figYearEl;
-var submitBtn = document.querySelector("button");
-var pastSearches = document.querySelector("#pastSearches")
+var submitBtn = document.querySelector("#submitBtn");
+// var pastSearches = document.querySelector("#pastSearches")
 var searches = [];
-
-
+var signEl = document.querySelector("#sunSign")
+var birthmonth = document.querySelector(".birthmonth")
+var birthday = document.querySelector(".birthday")
+var descEl = document.querySelector("#description")
 
 var sunSign = function(month, day) {
 
@@ -96,21 +98,27 @@ var sunSign = function(month, day) {
     return sign;
 };
 
-var month = 1;
-var day = 18;
+var month;
+var day;
+var sign;
 
-var sign = sunSign(month, day)
 
 submitBtn.addEventListener("click", function(event){
     event.preventDefault();
+    console.log("clicked!")
+
+    month = birthmonth.value;
+    day = birthday.value;
+
+    sign = sunSign(month, day);
+    signEl.textContent = sign;
     var url = 'https://aztro.sameerkumar.website/?sign=' + sign + '&day=today';
     fetch(url, {method: "POST"})
     .then(response => response.json())
     .then(json => {
         var {description} = json;
-        // console.log(json);
+        console.log(json);
         horoEl.textContent = description;
-        localStorage.setItem("sign", sign)
     });
 
     var url = 'https://byabbe.se/on-this-day/' + month + '/' + day + '/births.json';
@@ -120,16 +128,20 @@ submitBtn.addEventListener("click", function(event){
         console.log(json);
         const {births} = json;
         var randBirth = births[Math.floor(Math.random()*births.length)];
-        heroEl.innerHTML = "<a href='" + randBirth.wikipedia[0].wikipedia + "'>" + randBirth.description + "</a>" + " is a " + sign;
-        yearEl.textContent = "...and was born in the year " + randBirth.year;
+        charEl.innerHTML = "<a href='" + randBirth.wikipedia[0].wikipedia + "'>" + randBirth.wikipedia[0].title + "</a>";
+        descEl.textContent = randBirth.description;
+        // yearEl.textContent = "...and was born in the year " + randBirth.year;
         var date = month + "/" + day;
+
+        $("#pastSearches").find("a").remove()
+
         searches.push(date);
         localStorage.setItem("searches", JSON.stringify(searches));
-        pastSearches.innerHTML = "";
         for (i=0; i < searches.length; i++) {
-            var li = document.createElement("li");
-            li.textContent = searches[i] + ":" + randBirth.wikipedia[0].title;
-            pastSearches.append(li);
+            var a = document.createElement("a");
+            a.classList = "panel-block is-active"
+            a.textContent = searches[i] + ": " + randBirth.wikipedia[0].title;
+            pastSearches.append(a);
         }
 
     });
