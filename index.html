@@ -3,54 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Superhero Birthday Bash</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
-<body>
+<body class="is-warning">
 
     <!--A block for our title-->
-<div class="title">
-    <h1>Superhero Birthday Bash</h1>
-    <h3>A Daily Horoscope Application for all superhero fans</h3>
+<div class="hero block is-danger">
+    <h1 class="title is-1">Superhero Birthday Bash</h1>
+    <h3 class="subtitle is-2">A Daily Horoscope Application for all superhero fans</h3>
 </div>
 
-
+<aside class="columns">
 <!-- Side Form for User's to enter their D.O.B.  -->
-    <div class="userInput">
-            <form>
-                <h3>Instructions</h3>
-                <p>Please enter your Birthday to find out which Superhero is your "solar twin" and also your daily Horoscope!</p>
-                <input class="userDate"> 
+            <form class="column is-one-quarter">
+                <h3 class="title is-3">Instructions</h3>
+                <p>Please select your birth month and day from the below dropwdowns to find out which Superhero/Famous Character is your "solar twin" and also your daily Horoscope!</p>
+                       
+                  <div class="select is-primary is-focused">
+                <select class="">
+                    <optgroup label="Birth Month">
+                      <option>1</option>  <option>2</option>  <option>3</option>
+                      <option>4</option>  <option>5</option>  <option>6</option>
+                      <option>7</option>  <option>8</option>  <option>9</option>
+                      <option>10</option> <option>11</option> <option>12</option>
+                      </optgroup>
+                  </select>
+                </div>
+
+                  <div class="select is-primary is-focused">
+                  <select class="">
+                    <optgroup label="Birth Day">
+                      <option>1</option>  <option>2</option>  <option>3</option>
+                      <option>4</option>  <option>5</option>  <option>6</option>
+                      <option>7</option>  <option>8</option>  <option>9</option>
+                      <option>10</option> <option>11</option> <option>12</option>
+                      <option>13</option> <option>14</option> <option>15</option>
+                      <option>16</option> <option>17</option> <option>18</option>
+                      <option>19</option> <option>20</option> <option>21</option>
+                      <option>22</option> <option>23</option> <option>24</option>
+                      <option>25</option> <option>26</option> <option>27</option>
+                      <option>28</option> <option>29</option> <option>30</option>
+                      <option>31</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <button class="button is-primary is-outlined">Show Solar Twin!</button>
             </form>
-            <button type="submit" form="date" value="Submit">Submit</button>
         
         <!--previous searches will be held here-->
-            <div class="pastHeros">
-                <ul>
-                    <li> <span>Past Hero 1</span></li>
-                    <li><span>Past Hero 2</span></li>
-                    <li> <span>Past Hero 3</span></li>
-                    <li> <span>Past Hero 4</span></li>
-                </ul>
-        </div>
-    </div>
+        <article class="panel column is-one-quarter bd-notification is-link">
+            <p class="panel-heading">Recent Characters</p>
+            <a class="panel-block is-active">Past search 1</a>
+            <a class="panel-block is-active">Past search 2</a>
+            <a class="panel-block is-active">Past search 3</a>
+            <a class="panel-block is-active">Past search 4</a>
+          </article>
+          
+        </aside>  
+
+<main class="columns">
 
     <!--SuperHero Bio section with Img-->
-    <div class="heroBio">
-        <img class="heroImg" >
-        <div class="heroText"><span>Here is where information about the hero will go</span></div>
-        <div class="heroYear"><span>Here is where their birth year will go.</span></div>
+    <div class="card column is-three-quarter">
+        <header class="card-header">
+            <p class="card-header-title">
+              Character name
+            </p>
+            </header>
+        <div class="card-image">
+        <figure>
+            <img src="https://bulma.io/images/placeholders/256x256.png">
+          </figure>
+        <div class="card-content">
+          <div class="content">
+            Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+          </div>
+        </div>
+      </div>
     </div>
 
 <!--Horoscope Section-->
-    <div class="horoscope">
-        <img src="link to api's horrorscope image link">   
-        <h3>Your Daily Horoscope for <span></span> is...</h3>
-        <p class="horo"><span>Here is where the horoscope text will go</span></p>
-    </div>
-
+    <div class="box column is-three-quarter">
+        <article class="media ">
+          <div class="media-left">
+            <figure class="image is-64x64">
+              <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>Your Daily Horoscope for </strong><strong id="sunSign">Libra</strong>
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+              </p>
+            </div>
+        </article>
+      </div>
+    </main>
 <!--Credits Section-->
 <footer>
     <h6>Created by Carrie, Brigid, and Harrison University of Oregon Full Stack Web Development 2021</h6>
@@ -59,7 +112,6 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </body>
 </html>
