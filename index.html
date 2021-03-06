@@ -20,28 +20,28 @@
 <!-- Side Form for User's to enter their D.O.B.  -->
             <form class="column is-one-quarter">
                 <h3 class="title is-3">Instructions</h3>
-                <p>Please select your birth month and day from the below dropwdowns to find out which Superhero/Famous Character is your "solar twin" and also your daily Horoscope!</p>
+                <p>Please select your birth month and day from the below dropdowns to find out which Superhero/Famous Character is your "solar twin" and also your daily Horoscope!</p>
                        
                   <div class="select is-primary is-focused">
-                <select class="">
-                    <optgroup label="Birth Month">
+                <select class="birthmonth">
+                    <optgroup label="Birth Month"></optgroup>
                       <option>1</option>  <option>2</option>  <option>3</option>
                       <option>4</option>  <option>5</option>  <option>6</option>
                       <option>7</option>  <option>8</option>  <option>9</option>
-                      <option>10</option> <option>11</option> <option>12</option>
+                      <option>10</option> <option value="11">11</option> <option>12</option>
                       </optgroup>
                   </select>
                 </div>
 
                   <div class="select is-primary is-focused">
-                  <select class="">
+                  <select class="birthday">
                     <optgroup label="Birth Day">
                       <option>1</option>  <option>2</option>  <option>3</option>
                       <option>4</option>  <option>5</option>  <option>6</option>
                       <option>7</option>  <option>8</option>  <option>9</option>
                       <option>10</option> <option>11</option> <option>12</option>
                       <option>13</option> <option>14</option> <option>15</option>
-                      <option>16</option> <option>17</option> <option>18</option>
+                      <option>16</option> <option>17</option> <option value="18">18</option>
                       <option>19</option> <option>20</option> <option>21</option>
                       <option>22</option> <option>23</option> <option>24</option>
                       <option>25</option> <option>26</option> <option>27</option>
@@ -50,11 +50,11 @@
                     </optgroup>
                   </select>
                 </div>
-                <button class="button is-primary is-outlined">Show Solar Twin!</button>
+                <button class="button is-primary is-outlined" id="submitBtn">Show Solar Twin!</button>
             </form>
         
         <!--previous searches will be held here-->
-        <article class="panel column is-one-quarter bd-notification is-link">
+        <article class="panel column is-one-quarter bd-notification is-link" id="pastSearches">
             <p class="panel-heading">Recent Characters</p>
             <a class="panel-block is-active">Past search 1</a>
             <a class="panel-block is-active">Past search 2</a>
@@ -69,7 +69,7 @@
     <!--SuperHero Bio section with Img-->
     <div class="card column is-three-quarter">
         <header class="card-header">
-            <p class="card-header-title">
+            <p class="card-header-title" id="character">
               Character name
             </p>
             </header>
@@ -78,7 +78,7 @@
             <img src="https://bulma.io/images/placeholders/256x256.png">
           </figure>
         <div class="card-content">
-          <div class="content">
+          <div class="content" id="description">
             Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
           </div>
         </div>
@@ -98,7 +98,7 @@
               <p>
                 <strong>Your Daily Horoscope for </strong><strong id="sunSign">Libra</strong>
                 <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                <div id="horo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</div>
               </p>
             </div>
         </article>
@@ -113,5 +113,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
