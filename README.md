@@ -23,11 +23,16 @@ https://docs.google.com/presentation/d/1YN1dKxGTsNWpa24_HdFn7iy1BhZx8Ref-P-BbM_N
 # APIs Used
 https://aztro.readthedocs.io/en/latest/
 https://comicvine.gamespot.com/api/documentation
+https://byabbe.se/on-this-day/
 
 # CSS Framework
 Bulma
 
 # Roughbreakdown of tasks
+HTML 
+
 Javascript - Lead: 
 
 CSS and Styling 
+
+Written Deliverables & Presentation 
