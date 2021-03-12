@@ -126,7 +126,7 @@ submitBtn.addEventListener("click", function(event){
     sign = sunSign(month, day);
     signEl.textContent = sign;
     signImg = sign + ".png"
-    symbolEl.setAttribute("src", "../assets/" + signImg);
+    symbolEl.setAttribute("src", "./assets/" + signImg);
     var url = 'https://aztro.sameerkumar.website/?sign=' + sign + '&day=today';
     fetch(url, {method: "POST"})
     .then(response => response.json())
