@@ -111,6 +111,7 @@ var searches = JSON.parse(localStorage.getItem("storedSearches")) || [];
     for (i=0; i < searches.length; i++) {
         var a = document.createElement("a");
         a.classList = "past button is-hovered is-fullwidth mb-4 is-warning orange"
+        a.setAttribute("data-index", i)
         a.textContent = searches[i].month + "/" + searches[i].day + ": " + searches[i].figure;
         pastSearches.append(a);
 }
@@ -125,7 +126,7 @@ submitBtn.addEventListener("click", function(event){
     sign = sunSign(month, day);
     signEl.textContent = sign;
     signImg = sign + ".png"
-    symbolEl.setAttribute("src", "assets/" + signImg);
+    symbolEl.setAttribute("src", "./assets/" + signImg);
     var url = 'https://aztro.sameerkumar.website/?sign=' + sign + '&day=today';
     fetch(url, {method: "POST"})
     .then(response => response.json())
