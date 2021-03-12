@@ -155,7 +155,8 @@ submitBtn.addEventListener("click", function(event){
         for (i=0; i < searches.length; i++) {
             var a = document.createElement("a");
             a.classList = "past button is-hovered is-fullwidth mb-4 is-warning orange"
-            a.attr("data-index", i)
+            a.setAttribute("data-index", i)
+            console.log(a.getAttribute("data-index"));
             a.textContent = searches[i].month + "/" + searches[i].day + ": " + searches[i].figure;
             pastSearches.append(a);
         }
@@ -167,17 +168,17 @@ submitBtn.addEventListener("click", function(event){
 $( "#pastSearches").on("click", ".past", function(event) {
         event.preventDefault();
         console.log("clicked a past search!")
-        var thisButton = $( this );
+        var thisButton = event.target;
         console.log(thisButton);       
-        console.log(thisButton.attr("data-index"))
+        console.log(thisButton.getAttribute("data-index"))
 
-        text = thisButton.text()
+        text = thisButton.textContent;
         splitText = text.split(":");
         console.log(splitText);
         splitDate = splitText[0].split("/") ;
         month = splitDate[0];
         day = splitDate[1];
-        thisFigure = searches[thisButton.attr("data-index")]
+        thisFigure = searches[thisButton.getAttribute("data-index")]
 
         sign = sunSign(month, day);
         signEl.textContent = sign;
