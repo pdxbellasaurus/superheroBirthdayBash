@@ -1,9 +1,11 @@
+## Link to Live URL
+https://pdxbellasaurus.github.io/superheroBirthdayBash/
+
 ## Famous Person(s) Horoscope Birthday Bash!
 A fun way for Users to freshen up their knowledge on their famous birthday twins and connect them with the cosmos. 
 
 # Project Descsription
 Ever wanted to know which famous person from history that you share a birthday with? Ever wanted to know your horoscope for the day? With this one of a kind Web application, users will be able to know both - all by entering in their birthday! The site will then generate a famous person for you as well as your shared horoscope. Interested in knowing how your horoscope changes throughout the week? - Users will be able to look up previous searches via a sidebar that shows them clickable links to previously searched famous persons. 
-
 
 # User Story
 As a fan of famous persons and horoscopes, as a User, I want to know who I share a birthday with and our horoscope for the day. 
@@ -16,23 +18,18 @@ As a fan of famous persons and horoscopes, as a User, I want to know who I share
 7.	Their Daily horoscope
 8.	Previous “birthday twins” are logged on a sidebar, so Users can see how their horoscope changes each day.
 
-
 # Wireframe
 https://docs.google.com/presentation/d/1YN1dKxGTsNWpa24_HdFn7iy1BhZx8Ref-P-BbM_Nm-k/edit?usp=sharing
 
 # APIs Used
 https://aztro.readthedocs.io/en/latest/
-https://comicvine.gamespot.com/api/documentation
 https://byabbe.se/on-this-day/
 
 # CSS Framework
 Bulma
 
 # Roughbreakdown of tasks
-HTML 
-
-Javascript - Lead: 
-
-CSS and Styling 
-
-Written Deliverables & Presentation 
+Javascript: Brigid -Lead, Carrie -Support, Harrison - Verbal Motivation
+CSS and Styling: Carrie -Lead, Brigid -Support 
+HTML: Carrie + Brigid -Leads, Harrison -Support
+Presentation: Harrison -Lead, Carrie -Support. 
