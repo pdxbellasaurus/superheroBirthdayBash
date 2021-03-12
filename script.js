@@ -3,12 +3,14 @@ var charEl = document.querySelector("#character");
 var horoEl = document.querySelector("#horo")
 var figYearEl;
 var submitBtn = document.querySelector("#submitBtn");
-// var pastSearches = document.querySelector("#pastSearches")
-var searches = [];
+var pastSearches = document.querySelector("#pastSearches")
 var signEl = document.querySelector("#sunSign")
+var symbolEl = document.querySelector("#horo-img")
 var birthmonth = document.querySelector(".birthmonth")
 var birthday = document.querySelector(".birthday")
 var descEl = document.querySelector("#description")
+var pastBtns = document.querySelectorAll(".past")
+
 
 var sunSign = function(month, day) {
 
@@ -102,6 +104,16 @@ var month;
 var day;
 var sign;
 
+$("#pastSearches").find("a").remove()
+var searches = JSON.parse(localStorage.getItem("storedSearches")) || [];
+
+
+    for (i=0; i < searches.length; i++) {
+        var a = document.createElement("a");
+        a.classList = "past button is-hovered is-fullwidth mb-4 is-warning orange"
+        a.textContent = searches[i].month + "/" + searches[i].day + ": " + searches[i].figure;
+        pastSearches.append(a);
+}
 
 submitBtn.addEventListener("click", function(event){
     event.preventDefault();
@@ -112,6 +124,8 @@ submitBtn.addEventListener("click", function(event){
 
     sign = sunSign(month, day);
     signEl.textContent = sign;
+    signImg = sign + ".png"
+    symbolEl.setAttribute("src", "assets/" + signImg);
     var url = 'https://aztro.sameerkumar.website/?sign=' + sign + '&day=today';
     fetch(url, {method: "POST"})
     .then(response => response.json())
@@ -127,22 +141,67 @@ submitBtn.addEventListener("click", function(event){
     .then(json => {
         console.log(json);
         const {births} = json;
-        var randBirth = births[Math.floor(Math.random()*births.length)];
+        var rand = Math.floor(Math.random()*births.length)
+        var randBirth = births[rand];
         charEl.innerHTML = "<a href='" + randBirth.wikipedia[0].wikipedia + "'>" + randBirth.wikipedia[0].title + "</a>";
         descEl.textContent = randBirth.description;
-        // yearEl.textContent = "...and was born in the year " + randBirth.year;
-        var date = month + "/" + day;
+        var figure = randBirth.wikipedia[0].title
+        var search = {rand, month, day, figure};
 
         $("#pastSearches").find("a").remove()
-
-        searches.push(date);
-        localStorage.setItem("searches", JSON.stringify(searches));
+        console.log(search);
+        searches.push(search);
+        localStorage.setItem("storedSearches", JSON.stringify(searches));
         for (i=0; i < searches.length; i++) {
             var a = document.createElement("a");
-            a.classList = "panel-block is-active"
-            a.textContent = searches[i] + ": " + randBirth.wikipedia[0].title;
+            a.classList = "past button is-hovered is-fullwidth mb-4 is-warning orange"
+            a.setAttribute("data-index", i)
+            console.log(a.getAttribute("data-index"));
+            a.textContent = searches[i].month + "/" + searches[i].day + ": " + searches[i].figure;
             pastSearches.append(a);
         }
 
     });
 });
+
+
+$( "#pastSearches").on("click", ".past", function(event) {
+        event.preventDefault();
+        console.log("clicked a past search!")
+        var thisButton = event.target;
+        console.log(thisButton);       
+        console.log(thisButton.getAttribute("data-index"))
+
+        text = thisButton.textContent;
+        splitText = text.split(":");
+        console.log(splitText);
+        splitDate = splitText[0].split("/") ;
+        month = splitDate[0];
+        day = splitDate[1];
+        thisFigure = searches[thisButton.getAttribute("data-index")]
+
+        sign = sunSign(month, day);
+        signEl.textContent = sign;
+        signImg = sign + ".png"
+        symbolEl.setAttribute("src", "assets/" + signImg);
+        var url = 'https://aztro.sameerkumar.website/?sign=' + sign + '&day=today';
+        fetch(url, {method: "POST"})
+        .then(response => response.json())
+        .then(json => {
+            var {description} = json;
+            console.log(json);
+            horoEl.textContent = description;
+        });
+
+        var url = 'https://byabbe.se/on-this-day/' + month + '/' + day + '/births.json';
+        fetch(url)
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            const {births} = json;
+            
+            var randBirth = births[thisFigure.rand];
+            charEl.innerHTML = "<a href='" + randBirth.wikipedia[0].wikipedia + "'>" + randBirth.wikipedia[0].title + "</a>";
+            descEl.textContent = randBirth.description;
+            })
+    });
