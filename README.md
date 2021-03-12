@@ -1,5 +1,5 @@
 ## Link to Live URL
-https://pdxbellasaurus.github.io/superheroBirthdayBash/
+[Famous Birthday Bash](https://pdxbellasaurus.github.io/superheroBirthdayBash/)
 
 ## Famous Person(s) Horoscope Birthday Bash!
 A fun way for Users to freshen up their knowledge on their famous birthday twins and connect them with the cosmos. 
@@ -19,17 +19,18 @@ As a fan of famous persons and horoscopes, as a User, I want to know who I share
 8.	Previous “birthday twins” are logged on a sidebar, so Users can see how their horoscope changes each day.
 
 # Wireframe
-https://docs.google.com/presentation/d/1YN1dKxGTsNWpa24_HdFn7iy1BhZx8Ref-P-BbM_Nm-k/edit?usp=sharing
+[Presentation](https://docs.google.com/presentation/d/1YN1dKxGTsNWpa24_HdFn7iy1BhZx8Ref-P-BbM_Nm-k/edit?usp=sharing)
 
 # APIs Used
 https://aztro.readthedocs.io/en/latest/
+
 https://byabbe.se/on-this-day/
 
 # CSS Framework
 Bulma
 
-# Roughbreakdown of tasks
-Javascript: Brigid -Lead, Carrie -Support, Harrison - Verbal Motivation
+# Roughbreakdown of Tasks
+Javascript: Brigid -Lead, Carrie -Support, Harrison -Verbal Motivation and Research
 CSS and Styling: Carrie -Lead, Brigid -Support 
-HTML: Carrie + Brigid -Leads, Harrison -Support
-Presentation: Harrison -Lead, Carrie -Support. 
+HTML: Carrie + Brigid + Harrision -Leads
+Presentation and Documentation: Harrison -Lead, Carrie -Support
