@@ -165,7 +165,6 @@ submitBtn.addEventListener("click", function(event){
     });
 });
 
-
 $( "#pastSearches").on("click", ".past", function(event) {
         event.preventDefault();
         console.log("clicked a past search!")
