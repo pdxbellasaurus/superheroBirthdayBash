@@ -31,6 +31,9 @@ Bulma
 
 # Roughbreakdown of Tasks
 Javascript: Brigid -Lead, Carrie -Support, Harrison -Verbal Motivation and Research
+
 CSS and Styling: Carrie -Lead, Brigid -Support 
+
 HTML: Carrie + Brigid + Harrision -Leads
+
 Presentation and Documentation: Harrison -Lead, Carrie -Support
